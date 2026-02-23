@@ -1,0 +1,21 @@
+{
+  "name": "mascle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "筋トレメニュー記録 & 消費カロリー計算アプリ",
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "dev:frontend": "npm run dev --workspace=packages/frontend",
+    "build": "npm run build --workspace=packages/backend && npm run build --workspace=packages/frontend",
+    "build:backend": "npm run build --workspace=packages/backend",
+    "build:frontend": "npm run build --workspace=packages/frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
